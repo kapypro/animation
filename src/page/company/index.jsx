@@ -1,23 +1,40 @@
 import { Box, Button, Card, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import cardPic from "../../assets/card.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 // Import Swiper styles
 import "swiper/css";
 
 const Company = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      delay: 100,
+      once: false,
+    });
+  }, []);
+
   return (
     <Box sx={{ py: "8rem", pt: { xs: 40, sm: 0 } }}>
       <Box
         sx={{ display: "flex", flexDirection: "column", gap: "0.5rem", px: 5 }}
       >
-        <Typography sx={{ fontSize: "1rem" }}>Updates</Typography>
-        <Typography sx={{ fontSize: "1.5rem", fontWeight: "bolder" }}>
+        <Typography data-aos="fade-right" sx={{ fontSize: "1rem" }}>
+          Updates
+        </Typography>
+        <Typography
+          data-aos="fade-right"
+          sx={{ fontSize: "1.5rem", fontWeight: "bolder" }}
+        >
           The latest from
         </Typography>
         <Typography
+          data-aos="fade-right"
           sx={{ color: "#F47024", fontSize: "2rem", fontWeight: "bolder" }}
         >
           Our Company

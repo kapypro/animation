@@ -1,8 +1,18 @@
 import { Box, Button, Card, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import ladder from "../../assets/ladder.png";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Team = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      delay: 100,
+      once: false,
+    });
+  }, []);
   return (
     <Box
       sx={{
@@ -19,12 +29,26 @@ const Team = () => {
           height: "100%",
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", pl: 5, pt: {sm:12,xs:5},pb:{sm:0,xs:5} }}>
-          <Typography sx={{ fontSize: "0.9rem" }}>Join our team</Typography>
-          <Typography sx={{ fontSize: "2rem", fontWeight: "bolder" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            pl: 5,
+            pt: { sm: 12, xs: 5 },
+            pb: { sm: 0, xs: 5 },
+          }}
+        >
+          <Typography sx={{ fontSize: "0.9rem" }} data-aos="fade-left">
+            Join our team
+          </Typography>
+          <Typography
+            data-aos="fade-left"
+            sx={{ fontSize: "2rem", fontWeight: "bolder" }}
+          >
             Careers at
           </Typography>
           <Typography
+            data-aos="fade-left"
             sx={{
               fontSize: "2rem",
               color: "rgba(244, 112, 36, 1)",
@@ -33,7 +57,10 @@ const Team = () => {
           >
             Our Company
           </Typography>
-          <Typography sx={{ fontSize: "0.9rem", width: "70%" }}>
+          <Typography
+            data-aos="fade-left"
+            sx={{ fontSize: "0.9rem", width: "70%" }}
+          >
             We're always looking for talented individuals who share our passion
             for innovation and excellence.
           </Typography>

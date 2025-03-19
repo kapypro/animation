@@ -18,6 +18,29 @@ const Domain = () => {
     AOS.refresh();
   }, [change]);
 
+  // const [change, setChange] = useState(0);
+  // const totalCards = 5;
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const sections = document.querySelectorAll(".aboutStickySection");
+  //     let index = 0;
+
+  //     sections.forEach((section, i) => {
+  //       const rect = section.getBoundingClientRect();
+  //       if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+  //         index = i;
+  //       }
+  //     });
+
+  //     setChange(index);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+  
+
   return (
     <Box
       onClick={() => {

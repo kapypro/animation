@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import man from "../../assets/portrait.png";
 import { Box, Typography } from "@mui/material";
 import vector from "../../assets/Vector.png";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Ceo = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      delay: 100,
+      once: false,
+    });
+  }, []);
   return (
     <Box
       sx={{
@@ -13,7 +23,7 @@ const Ceo = () => {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "rgba(244, 112, 36, 0.1)",
-        height: {sm:"80vh",xs:"90vh"},
+        height: { sm: "80vh", xs: "90vh" },
       }}
     >
       <Box
@@ -52,14 +62,20 @@ const Ceo = () => {
             display: "flex",
             flexDirection: "column",
             width: "100%",
-            p: {sm:12,xs:5},
+            p: { sm: 12, xs: 5 },
           }}
         >
-          <Typography sx={{ fontSize: "0.9rem" }}>Message</Typography>
-          <Typography sx={{ fontSize: "1.8rem", fontWeight: 700 }}>
+          <Typography data-aos="fade-up" sx={{ fontSize: "0.9rem" }}>
+            Message
+          </Typography>
+          <Typography
+            data-aos="fade-up"
+            sx={{ fontSize: "1.8rem", fontWeight: 700 }}
+          >
             What our
           </Typography>
           <Typography
+            data-aos="fade-up"
             sx={{
               fontSize: "1.8rem",
               fontWeight: 800,
@@ -70,6 +86,7 @@ const Ceo = () => {
             CEO Says
           </Typography>
           <Typography
+            data-aos="fade-up"
             sx={{ fontSize: "1.2rem", wordBreak: "break-all", mt: 2 }}
           >
             Our Company empowers individuals and businesses with strategic
@@ -80,10 +97,13 @@ const Ceo = () => {
             through innovation, integrity, and personalized solutions for
             long-term growth.
           </Typography>
-          <Typography sx={{ fontSize: "1rem", fontWeight: 800, mt: 2 }}>
+          <Typography
+            data-aos="fade-up"
+            sx={{ fontSize: "1rem", fontWeight: 800, mt: 2 }}
+          >
             Raghvendra Nath,
           </Typography>
-          <Typography sx={{ fontSize: "1rem" }}>
+          <Typography data-aos="fade-up" sx={{ fontSize: "1rem" }}>
             MD and CEO, Our Company
           </Typography>
         </Box>

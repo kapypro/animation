@@ -1,23 +1,46 @@
 import { Box, Button, Card, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import boy from "../../assets/boy.png";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 // Import Swiper styles
 import "swiper/css";
 
 const MindTeam = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      delay: 100,
+      once: false,
+      // offset: 500,
+    });
+  }, []);
   return (
     <Box sx={{ py: "8rem" }}>
       <Box
         sx={{ display: "flex", flexDirection: "column", gap: "0.5rem", px: 5 }}
       >
-        <Typography sx={{ fontSize: "1rem" }}>Our Team</Typography>
-        <Typography sx={{ fontSize: "1.5rem", fontWeight: "bolder" }}>
+        <Typography
+          sx={{ fontSize: "1rem" }}
+          data-aos="slide-right"
+          data-aos-delay="350"
+        >
+          Our Team
+        </Typography>
+        <Typography
+          data-aos="slide-right"
+          data-aos-delay="350"
+          sx={{ fontSize: "1.5rem", fontWeight: "bolder" }}
+        >
           The Minds Behind
         </Typography>
         <Typography
+          data-aos="slide-right"
+          data-aos-delay="350"
           sx={{ color: "#F47024", fontSize: "2rem", fontWeight: "bolder" }}
         >
           Our Company
@@ -61,7 +84,7 @@ const MindTeam = () => {
           className="mySwiper"
         >
           {[...Array(5)].map((_, index) => (
-            <SwiperSlide key={index} >
+            <SwiperSlide key={index}>
               <Card
                 sx={{
                   width: "22rem",

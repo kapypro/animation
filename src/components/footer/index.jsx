@@ -1,12 +1,23 @@
 import { Box, Button, Fab, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../../assets/Logo.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      delay: 100,
+      once: false,
+    });
+  }, []);
+
   return (
     <Box sx={{ width: "100%", position: "relative" }}>
       <Box
@@ -24,11 +35,17 @@ const Footer = () => {
           gap: "5rem",
         }}
       >
-        <Typography sx={{ color: "white", fontSize: "1.5rem", width: "30%" }}>
+        <Typography
+          data-aos="fade-right"
+          data-aos-delay="150"
+          sx={{ color: "white", fontSize: "1.5rem", width: "30%" }}
+        >
           Subscribe for regular Updates from{" "}
           <span style={{ fontWeight: "bolder" }}>Our Company</span>
         </Typography>
         <Box
+          data-aos="fade-left"
+          data-aos-delay="150"
           sx={{
             display: "flex",
             gap: "2rem",

@@ -1,12 +1,23 @@
 import { Box, Button, Typography } from "@mui/material";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import bg from "../../assets/bg.png";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const About = () => {
   const pathRef = useRef();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      delay: 100,
+      once: false,
+    });
+  }, []);
 
   useGSAP(() => {
     gsap.fromTo(
@@ -58,11 +69,23 @@ const About = () => {
             px: "4rem",
           }}
         >
-          <Typography sx={{ fontSize: "0.8rem" }}>About Us</Typography>
-          <Typography sx={{ fontSize: "2.8rem", lineHeight: 1.2 }}>
+          <Typography
+            data-aos="fade-down"
+            data-aos-delay="700"
+            sx={{ fontSize: "0.8rem" }}
+          >
+            About Us
+          </Typography>
+          <Typography
+            data-aos="fade-down"
+            data-aos-delay="650"
+            sx={{ fontSize: "2.8rem", lineHeight: 1.2 }}
+          >
             Empowering
           </Typography>
           <Typography
+            data-aos="fade-down"
+            data-aos-delay="600"
             sx={{
               fontSize: "2.8rem",
               fontWeight: "bolder",
@@ -72,7 +95,11 @@ const About = () => {
           >
             Your Financial Future
           </Typography>
-          <Typography sx={{ fontSize: "0.8rem", mt: "0.5rem" }}>
+          <Typography
+            data-aos="fade-down"
+            data-aos-delay="500"
+            sx={{ fontSize: "0.8rem", mt: "0.5rem" }}
+          >
             At Our Company, we are committed to providing ethical,
             research-driven financial solutions that help you achieve your
             goals. With integrity at our core, we tailor our strategies to meet
@@ -80,6 +107,8 @@ const About = () => {
             security.
           </Typography>
           <Button
+            // data-aos="fade-down"
+            // data-aos-delay="100"
             variant="outlined"
             sx={{
               position: "relative",
@@ -136,14 +165,19 @@ const About = () => {
           px: "2.5rem",
           gap: "2rem",
           my: "4rem",
+          overflow:"hidden"
         }}
       >
         <Box sx={{ width: { sm: "20%", xs: "100%" } }}>
-          <Typography>Overview</Typography>
-          <Typography sx={{ fontSize: "1.6rem", fontWeight: 500 }}>
+          <Typography data-aos="fade-right">Overview</Typography>
+          <Typography
+            data-aos="fade-right"
+            sx={{ fontSize: "1.6rem", fontWeight: 500 }}
+          >
             Our Financial
           </Typography>
           <Typography
+            data-aos="fade-right"
             sx={{
               color: "rgba(244, 112, 36, 1)",
               fontSize: "1.8rem",
@@ -155,6 +189,7 @@ const About = () => {
         </Box>
         <Box sx={{ width: { sm: "80%", xs: "100%" }, pt: "5rem" }}>
           <Typography
+            data-aos="fade-left"
             sx={{
               fontSize: "1.2rem",
               wordBreak: "break-all",
